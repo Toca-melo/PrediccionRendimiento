@@ -69,6 +69,4 @@ Puedes acceder al notebook completo en el siguiente enlace:
 ---
 
 
-🧑‍💻 Autores
-Valentina Beca
-Brayan Zamora
+🧑‍💻 Autores: Valentina Beca y Brayan Zamora
