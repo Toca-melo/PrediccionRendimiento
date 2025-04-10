@@ -21,7 +21,7 @@
             font-weight: bold;
         }
         .info-text {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #bbbbbb;
         }
         .btn-custom {
@@ -37,29 +37,38 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4 text-center"> 📚 Predicción de Desempeño Escolar</h2>
+        <h2 class="mb-4 text-center"> 📚 Predicción del Rendimiento Escolar</h2>
+        <p>Modelo de predicción del rendimiento de un estudiante de escuela (Bueno, Promedio, Debajo del promedio).</p>
+        <img src="https://media.istockphoto.com/id/1338735375/es/foto/estudiante-adolescente-afroamericana-que-se-prepara-para-ir-a-la-escuela-despu%C3%A9s-de-las.jpg?s=612x612&w=0&k=20&c=dDblvPyMfW_0DmIYtsSRdRCB_Y0kCbmWdstFeajkUuc=" alt="Estudiante" width="500" style="display: block; margin: auto;" >
         <form method="POST">
             <div class="form-group">
                 <label class="form-label">Tiempo de estudio semanal</label>
+                <br>
+                <small class="info-text">Tiempo de estudio semanal del estudiante en horas.</small>
                 <input type="number" step="any" class="form-control" name="StudyTimeWeekly" value="18.0" min="0" max="168" required>
-                <small class="info-text">Tiempo de estudio semanal en horas.</small>
+                
             </div>
             <div class="form-group">
                 <label class="form-label">Ausencias</label>
+                <br>
+                <medium class="info-text">Número de ausencias del estudiante durante el año escolar.</medium>
                 <input type="number" step="any" class="form-control" name="Absences" value="0" min="0" required>
-                <small class="info-text">Número de ausencias durante el año escolar.</small>
+                
             </div>
             <div class="form-group">
                 <label class="form-label">Tutoría</label>
+                <br>
+                <small class="info-text">¿El estudiante asiste a tutorías?.</small>
                 <select class="form-control" name="Tutoring" required>
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="0">No</option>
                     <option value="1">Sí</option>
                 </select>
-                <small class="info-text">¿El estudiante está en tutorías?.</small>
             </div>
             <div class="form-group">
-                <label class="form-label">Apoyo parental</label>
+                <label class="form-label">Apoyo Parental</label>
+                <br>
+                <small class="info-text">El nivel de apoyo por parte de los padres al estudiante.</small>
                 <select class="form-control" name="ParentalSupport" required>
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="0">Ninguno</option>
@@ -68,18 +77,19 @@
                     <option value="3">Alto</option>
                     <option value="4">Muy alto</option>
                 </select>
-                <small class="info-text">El nivel de apoyo parental.</small>
+                
             </div>
             <div class="form-group">
                 <label class="form-label">Extraescolar</label>
+                <br>
+                <small class="info-text">¿El estudiante asiste a actividades extracurriculares?.</small>
                 <select class="form-control" name="Extracurricular" required>
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="0">No</option>
                     <option value="1">Sí</option>
                 </select>
-                <small class="info-text">¿El estudiante asiste a actividades extracurriculares?.</small>
             </div>
-            <button type="submit" class="btn btn-custom btn-block">Predecir Desempeño del estudiante</button>
+            <button type="submit" class="btn btn-custom btn-block">Predecir Rendimiento del estudiante</button>
         </form>
 
         {% if prediction %}
