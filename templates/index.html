@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clasificador de Pingüinos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .form-control {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .info-text {
+            font-size: 0.9rem;
+            color: #bbbbbb;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .alert-info {
+            background-color: #1a1a2e;
+            border-color: #2e2e4e;
+            color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center"> 📚 Predicción de Desempeño Escolar</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label class="form-label">Tiempo de estudio semanal</label>
+                <input type="number" step="any" class="form-control" name="StudyTimeWeekly" value="18.0" min="0" max="168" required>
+                <small class="info-text">Tiempo de estudio semanal en horas.</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Ausencias</label>
+                <input type="number" step="any" class="form-control" name="Absences" value="0" min="0" required>
+                <small class="info-text">Número de ausencias durante el año escolar.</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Tutoría</label>
+                <select class="form-control" name="Tutoring" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="0">No</option>
+                    <option value="1">Sí</option>
+                </select>
+                <small class="info-text">¿El estudiante está en tutorías?.</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Apoyo parental</label>
+                <select class="form-control" name="ParentalSupport" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="0">Ninguno</option>
+                    <option value="1">Bajo</option>
+                    <option value="2">Moderado</option>
+                    <option value="3">Alto</option>
+                    <option value="4">Muy alto</option>
+                </select>
+                <small class="info-text">El nivel de apoyo parental.</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Extraescolar</label>
+                <select class="form-control" name="Extracurricular" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="0">No</option>
+                    <option value="1">Sí</option>
+                </select>
+                <small class="info-text">¿El estudiante asiste a actividades extracurriculares?.</small>
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">Predecir Desempeño del estudiante</button>
+        </form>
+
+        {% if prediction %}
+            <div class="alert alert-info mt-4 text-center">
+                🔎 Predicción: <strong>{{ prediction }}</strong>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
